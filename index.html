@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <div class = "centered-text">
-  <title>Calculator</title>
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="centered-text">
+        <p>This is a basic Calculator</p>
+        <button id="startButton" class="startingButton" onclick="startButton()">Start Calculator</button>
     </div>
-  <body>
-    <div class = "centered-text">
-      <p>This is a basic Calculator</p>
-      <button id = "startButton" class = "startingButton" onClick = "startButton()">Start Calculator</button>
-    </div>
-  </body>
-  <script>
-    function startButton()
-      {
-        var operation = prompt("Operator +, -, *, /: ");
 
-        if (operation == null)
-        {
-          return;
-        else
-        {
-          switch (operation)
-            {
-              case "+":
-                src="add.js"
-                break;
-                case "-":
-                src="sub.js"
-                break;
-                case "*":
-                src="multiply.js"
-                break;
-                case "/":
-                src="divide.js"
-                break;
-              default:
+    <script>
+        function startButton() {
+            var operation = prompt("Operator +, -, *, /: ");
+
+            if (operation === null) {
                 return;
-                break;
+            } else {
+                var scriptSrc;
+
+                switch (operation) {
+                    case "+":
+                        scriptSrc = "add.js";
+                        break;
+                    case "-":
+                        scriptSrc = "sub.js";
+                        break;
+                    case "*":
+                        scriptSrc = "multiply.js";
+                        break;
+                    case "/":
+                        scriptSrc = "divide.js";
+                        break;
+                    default:
+                        return;
+                }
+
+                // Dynamically load the selected script
+                var script = document.createElement("script");
+                script.src = scriptSrc;
+                document.body.appendChild(script);
             }
         }
-  </script>
-</head>
+    </script>
+</body>
 </html>
