@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <div class = "centered-text">
+  <title>Calculator</title>
+    </div>
+  <body>
+    <div class = "centered-text">
+      <p>This is a basic Calculator</p>
+      <button id = "startButton" class = "startingButton" onClick = "startButton()">Start Calculator</button>
+    </div>
+  </body>
+  <script>
+    function startButton()
+      {
+        var operation = prompt("Operator +, -, *, /: ");
 
+        if (operation == null)
+        {
+          return;
+        else
+        {
+          switch (operation)
+            {
+              case "+":
+                src="add.js"
+                break;
+                case "-":
+                src="sub.js"
+                break;
+                case "*":
+                src="multiply.js"
+                break;
+                case "/":
+                src="divide.js"
+                break;
+              default:
+                return;
+                break;
+            }
+        }
+  </script>
+</head>
+</html>
